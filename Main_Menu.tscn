@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tu7k8")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BG" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 13
@@ -57,10 +57,10 @@ anchor_left = 0.5
 anchor_top = 0.54300004
 anchor_right = 0.5
 anchor_bottom = 0.54300004
-offset_left = 38.0
-offset_top = 5.1359863
-offset_right = 164.0
-offset_bottom = 132.23962
+offset_left = 28.0
+offset_top = 9.135986
+offset_right = 160.95447
+offset_bottom = 138.13599
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_257up")
