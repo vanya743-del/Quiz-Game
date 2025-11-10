@@ -1,10 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgh3fjpyg2a2t"]
+[gd_scene load_steps=6 format=3 uid="uid://dgh3fjpyg2a2t"]
 
 [ext_resource type="Script" uid="uid://b50bqo5lj4o51" path="res://weird_banana.gd" id="1_oboj7"]
-[ext_resource type="Texture2D" uid="uid://bnwyyxan5la65" path="res://assets/Buttons/IMG_0107.PNG" id="2_gvuqi"]
 [ext_resource type="Texture2D" uid="uid://ckwbti4x7db1c" path="res://assets/images/Pineapple.png" id="3_1l4y5"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cukyx"]
+load_path = "res://.godot/imported/IMG_0107.PNG-03a64bb592e0f6340a67f86681079dc2.ctex"
+
 [sub_resource type="Theme" id="Theme_t3btc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oboj7"]
+bg_color = Color(0.60965526, 0.54605955, 0.0071126805, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
 
 [node name="WeirdBanana" type="Control"]
 layout_mode = 3
@@ -29,7 +40,7 @@ offset_right = 213.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_gvuqi")
+texture = SubResource("CompressedTexture2D_cukyx")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -121,39 +132,63 @@ layout_mode = 2
 [node name="AnwerButtonContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
 columns = 2
 
 [node name="ButtonA" type="Button" parent="MarginContainer/VBoxContainer/AnwerButtonContainer"]
+custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.09019608, 0.05882353, 0.003921569, 1)
+theme_override_constants/h_separation = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_oboj7")
 text = "AnswerA "
 
 [node name="ButtonB" type="Button" parent="MarginContainer/VBoxContainer/AnwerButtonContainer"]
+custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.09019608, 0.05882353, 0.003921569, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oboj7")
 text = "Answer B
 "
 
 [node name="ButtonC" type="Button" parent="MarginContainer/VBoxContainer/AnwerButtonContainer"]
+custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.09019608, 0.05882353, 0.003921569, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oboj7")
 text = "Answer C"
 
 [node name="ButtonD" type="Button" parent="MarginContainer/VBoxContainer/AnwerButtonContainer"]
+custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.09019608, 0.05882353, 0.003921569, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oboj7")
 text = "Answer D
 "
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 18
 
 [node name="SetNewItem" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.09019608, 0.05882353, 0.003921569, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oboj7")
 text = "Guess New Item"
 
 [node name="GameOver" type="VBoxContainer" parent="MarginContainer"]

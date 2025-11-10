@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Weird Banana"
-run/main_scene="uid://crpp8ks0lg6o7"
+run/main_scene="uid://dgh3fjpyg2a2t"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
