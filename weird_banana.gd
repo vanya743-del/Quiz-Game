@@ -1,5 +1,35 @@
 extends Control
-var allItemsToGuess = ["Banana", "Strawberry", "Watermelon", "Blueberry", "Peach", "Pineapple"]
+var allItemsToGuess = [ 
+"Strawberry", 
+"Watermelon", 
+"Blueberry",  
+"Pineapple",
+"Ackee",
+"Apple",
+"Asparagus",
+"Broccoly",
+"BuddhasHand",
+"Carrot",
+"Celtuce",
+"Coliflower",
+"Cupuau",
+"Eggpland",
+"HerryTomatoes",
+"Jabuticaba",
+"MalabarSpinach",
+"Mango",
+"Mangosteen",
+"MiracleFruit",
+"Oca",
+"Patato",
+"Pepper",
+"Pineapple",
+"Pumpkin",
+"Rambutan",
+"RedCabbage",
+"Salak",
+"Samphire",
+"VanDurian",]
 var remainingItemToGuess = allItemsToGuess.duplicate()
 
 
@@ -42,7 +72,7 @@ func setNewItemToGuess():
 		currentItemToGuess = remainingItemToGuess[randi() % remainingItemToGuess.size()]
 		setAnswerButtonText()
 		
-		var image_path = "res://assets/" + currentItemToGuess +".png"
+		var image_path = "res://assets/images/" + currentItemToGuess +".png"
 		var texture = load(image_path)
 		# Assign the texture
 		guess_item_image.texture = texture
@@ -93,3 +123,9 @@ func _on_guess_pressed(button: Button):
 
 func _on_timer_timeout() -> void:
 	print("Timer Done") # Replace with function body.
+
+func ensure_node_exists(path: String, timeout := 2.0) -> void:
+	var elapsed := 0.0
+	while not has_node(path) and elapsed < timeout:
+		await get_tree().process_frame
+		elapsed += get_process_delta_time()
