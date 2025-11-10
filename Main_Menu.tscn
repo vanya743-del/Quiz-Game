@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4ktlofnqcorj"]
+
+[ext_resource type="Texture2D" uid="uid://drmi7ey3au2nl" path="res://assets/Buttons/IMG_0105.PNG" id="1_3mro0"]
+[ext_resource type="Script" uid="uid://bk56bn2gidd6p" path="res://main_menu.gd" id="1_tu7k8"]
+[ext_resource type="Texture2D" uid="uid://bbsie0d0mglsf" path="res://assets/Buttons/IMG_0121.PNG" id="2_dnfjo"]
+[ext_resource type="Texture2D" uid="uid://bqkgfihrdcu2k" path="res://assets/Buttons/IMG_0125.PNG" id="3_257up"]
+[ext_resource type="Texture2D" uid="uid://deaxrx7vmg3gc" path="res://assets/Buttons/IMG_0120.PNG" id="4_257up"]
+[ext_resource type="Texture2D" uid="uid://db6fp3vcqvvvf" path="res://assets/Buttons/IMG_0126.PNG" id="5_3mro0"]
+[ext_resource type="Texture2D" uid="uid://g6kkc4g5mj26" path="res://assets/Buttons/IMG_0122.PNG" id="6_tu7k8"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tu7k8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_right = 213.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3mro0")
+expand_mode = 1
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.628
+anchor_right = 0.381
+anchor_bottom = 0.628
+offset_left = -10.912018
+offset_top = -54.944
+offset_right = 126.08798
+offset_bottom = 83.25598
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_dnfjo")
+texture_hover = ExtResource("3_257up")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.54300004
+anchor_right = 0.5
+anchor_bottom = 0.54300004
+offset_left = 38.0
+offset_top = 5.1359863
+offset_right = 164.0
+offset_bottom = 132.23962
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_257up")
+texture_hover = ExtResource("5_3mro0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CrazyBanana" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.0
+offset_top = 46.0
+offset_right = 127.0
+offset_bottom = 287.0
+grow_horizontal = 2
+texture = ExtResource("6_tu7k8")
+expand_mode = 1
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
