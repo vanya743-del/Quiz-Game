@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8bs0s1i6xis"]
+[gd_scene load_steps=6 format=3 uid="uid://b8bs0s1i6xis"]
+
+[ext_resource type="Texture2D" uid="uid://dwck3m0d1ewbi" path="res://Buttons/IMG_0105.PNG" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://cd885iqdjrqnl" path="res://restart_game_button.gd" id="2_yxx3c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xapjj"]
 bg_color = Color(0.60784316, 0.54509807, 0.007843138, 1)
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 20
-corner_radius_top_right = 29
+corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 7
@@ -21,20 +24,50 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 7
 
-[node name="GameOver" type="VBoxContainer"]
-anchors_preset = 14
-anchor_top = 0.5
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -127.0
-offset_bottom = 127.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
-[node name="RestartGameButton" type="Button" parent="."]
-custom_minimum_size = Vector2(500, 0)
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Img0105" type="Sprite2D" parent="."]
+position = Vector2(567.25, 330.75)
+scale = Vector2(0.19930455, 0.31958005)
+texture = ExtResource("1_y26ei")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(250, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -328.0
+offset_right = 250.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="RestartGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -45,18 +78,19 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_xapjj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y26ei")
 text = "Play Again
 "
+script = ExtResource("2_yxx3c")
 
-[node name="HSeparator" type="HSeparator" parent="."]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-
-[node name="GameOverLabel" type="Button" parent="."]
+[node name="GameOverLabel" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 6
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.32156864, 0.29803923, 0.2901961, 1)
+theme_override_colors/font_hover_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_yxx3c")
 text = "Quit
 "
+
+[connection signal="pressed" from="VBoxContainer/RestartGameButton" to="VBoxContainer/RestartGameButton" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/GameOverLabel" to="VBoxContainer/RestartGameButton" method="_on_game_over_label_pressed"]

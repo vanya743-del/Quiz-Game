@@ -44,7 +44,6 @@ var currentItemToGuess
 
 @onready var v_box_container: VBoxContainer = $MarginContainer/VBoxContainer
 
-@onready var game_over: VBoxContainer = $MarginContainer/GameOver
 
 @onready var correct: Label = $MarginContainer/VBoxContainer/GuessResult/Correct
 @onready var wrong: Label = $MarginContainer/VBoxContainer/GuessResult/Wrong
@@ -65,8 +64,7 @@ func _process(delta: float) -> void:
 func setNewItemToGuess():
 	
 	if remainingItemToGuess.is_empty():
-		v_box_container.set_visible(false)
-		game_over.set_visible(true)
+		get_tree().change_scene_to_file("res://game_over.tscn")
 		
 	else:
 		currentItemToGuess = remainingItemToGuess[randi() % remainingItemToGuess.size()]
