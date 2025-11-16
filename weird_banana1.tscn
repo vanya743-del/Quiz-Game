@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgh3fjpyg2a2t"]
+[gd_scene load_steps=8 format=3 uid="uid://dgh3fjpyg2a2t"]
 
 [ext_resource type="Script" uid="uid://b50bqo5lj4o51" path="res://weird_banana.gd" id="1_oboj7"]
 [ext_resource type="Texture2D" uid="uid://ckwbti4x7db1c" path="res://assets/images/Pineapple.png" id="3_1l4y5"]
+[ext_resource type="AudioStream" uid="uid://c5euuv4xofvli" path="res://Music/test3 .wav" id="3_oboj7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cukyx"]
 load_path = "res://.godot/imported/IMG_0107.PNG-03a64bb592e0f6340a67f86681079dc2.ctex"
@@ -214,6 +215,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.09019608, 0.05882353, 0.003921569, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_oboj7")
 text = "Guess New Item"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oboj7")
+autoplay = true
 
 [connection signal="timeout" from="MarginContainer/TimerRemaining/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/AnwerButtonContainer/ButtonA" to="." method="_on_guess_pressed" flags=18]

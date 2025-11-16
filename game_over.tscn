@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8bs0s1i6xis"]
+[gd_scene load_steps=7 format=3 uid="uid://b8bs0s1i6xis"]
 
 [ext_resource type="Texture2D" uid="uid://dwck3m0d1ewbi" path="res://Buttons/IMG_0105.PNG" id="1_y26ei"]
 [ext_resource type="Script" uid="uid://cd885iqdjrqnl" path="res://restart_game_button.gd" id="2_yxx3c"]
+[ext_resource type="AudioStream" uid="uid://df4eawwb88khg" path="res://Music/test4.wav" id="3_ccer4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xapjj"]
 bg_color = Color(0.60784316, 0.54509807, 0.007843138, 1)
@@ -91,6 +92,10 @@ theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_yxx3c")
 text = "Quit
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ccer4")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/RestartGameButton" to="VBoxContainer/RestartGameButton" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/GameOverLabel" to="VBoxContainer/RestartGameButton" method="_on_game_over_label_pressed"]
