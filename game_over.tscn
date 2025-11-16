@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8bs0s1i6xis"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xapjj"]
+bg_color = Color(0.60784316, 0.54509807, 0.007843138, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 29
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y26ei"]
+bg_color = Color(0.19793722, 0.19793725, 0.19793713, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxx3c"]
+bg_color = Color(0.60784316, 0.54509807, 0.007843138, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 7
+
+[node name="GameOver" type="VBoxContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -127.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="RestartGameButton" type="Button" parent="."]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.03529412, 0.007843138, 0.019607844, 1)
+theme_override_colors/font_hover_color = Color(0.32318208, 0.29854837, 0.29033837, 1)
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_xapjj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y26ei")
+text = "Play Again
+"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="GameOverLabel" type="Button" parent="."]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.32156864, 0.29803923, 0.2901961, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxx3c")
+text = "Quit
+"
